@@ -1,12 +1,11 @@
-export const ContactItem = ({ filteredContacts, handleDeleteContact }) => {
+export const ContactItem = ({ contact, handleDeleteContact }) => {
   return (
-    <div>
-      {filteredContacts.map(contact => (
-        <li key={contact.id}>
-          {contact.name}: {contact.number}
-          <button onClick={()=>handleDeleteContact(contact.id)}> delete</button>
-        </li>
-      ))}
-    </div>
+    <li key={contact.id}>
+      {contact.name}: {contact.number}
+      <button onClick={() => handleDeleteContact(contact.id)}>
+        {' '}
+        delete
+      </button>
+    </li>
   );
 };

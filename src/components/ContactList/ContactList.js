@@ -1,12 +1,18 @@
 import { ContactItem } from 'components/ContactItem/ContactItem';
 
-
-export const ContactList = ({ contacts,handleDeleteContact}) => {
-  
+export const ContactList = ({ contacts, handleDeleteContact }) => {
   return (
-    <div>          
+    <div>
       <ul>
-        <ContactItem filteredContacts={contacts} handleDeleteContact={handleDeleteContact} />
+        <div>
+          {contacts.map(contact => (
+            <ContactItem
+              key={contact.id}
+              contact={contact}
+              handleDeleteContact={handleDeleteContact}
+            />
+          ))}
+        </div>
       </ul>
     </div>
   );
